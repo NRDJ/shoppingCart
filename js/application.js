@@ -4,6 +4,8 @@ $(document).ready(function () {
         var qty = parseFloat($(ele).find('.qty input').val());
 
         var subTotal = price * qty;
+
+        $(ele).children('.total').html(subTotal);
     });
 });
 
