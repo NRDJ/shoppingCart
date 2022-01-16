@@ -11,20 +11,24 @@ var updateSubTotal = function(ele) {
 
 
 var updateTotalPrice = function() {
-    var total = 0;
+  var total = 0;
 
-    $('tbody .shopping-row').each(function (i, ele) {
-        var subTotal = updateSubTotal(ele);
-        total += subTotal;
-        // total += parseFloat($(ele).find('.total').text().substring(1));
-    });
+  $('tbody .shopping-row').each(function (i, ele) {
+      var subTotal = updateSubTotal(ele);
+      total += subTotal;
+      // total += parseFloat($(ele).find('.total').text().substring(1));
+  });
 
-    $('#total').html('Total Price: $'+total);
+  $('#total').html('Total Price: $'+total);
 
-    console.log(total);
 }
 
 $(document).ready(function () {
   updateTotalPrice();
+
+  $('.btn.remove').on('click', function (event) {
+    $(this).closest('tr').remove();
+    updateTotalPrice();
+  })
 
 });
