@@ -31,8 +31,14 @@ $(document).ready(function () {
     updateTotalPrice();
   })
 
-  $('tr .qty').on('input', function (event) {
-    updateTotalPrice();
-  })
+  var timeout;
+
+  $('tr input').on('input', function () {
+    clearTimeout(timeout);
+
+    timeout = setTimeout(function () {
+      updateTotalPrice();
+    }, 500);
+  });
 
 });
