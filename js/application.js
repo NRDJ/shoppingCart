@@ -31,4 +31,8 @@ $(document).ready(function () {
     updateTotalPrice();
   })
 
+  $('tr .qty').on('input', function (event) {
+    updateTotalPrice();
+  })
+
 });
