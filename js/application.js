@@ -69,6 +69,10 @@ $(document).ready(function () {
 
     newRow.classList.add("shopping-row");
 
+    $('.add-item').find('#name').val('');
+    $('.add-item').find('#cost').val('');
   });
+
+
 
 });
