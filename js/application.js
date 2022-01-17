@@ -41,4 +41,31 @@ $(document).ready(function () {
     }, 500);
   });
 
+  $('.btn.add').on('click', function (event) {
+    
+    var name = $('.add-item').find('#name').val();
+    var cost = $('.add-item').find('#cost').val();
+
+    var table = document.getElementById('table');
+    var tableRowLength = $('tbody tr').length;
+    var newRow = table.insertRow(tableRowLength);
+    
+    newRow.innerHTML = '<tr class="shopping-row">' +
+
+    '<td class="name">' + name + '</td>' +
+
+    '<td class="price">$' + cost + '</td>' +
+
+    '<td class="qty"><input type="number" value="0"/></td>' +
+
+    '<td class="subTotal">$</td>' +
+
+    '<td><button class="btn btn-danger btn-sm remove">remove</button></td>' +
+
+    '</tr>';
+
+    newRow.classList.add("shopping-row");
+
+  });
+
 });

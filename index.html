@@ -19,7 +19,7 @@
       <h1 class="mb-4">Shopping Cart</h1>
       <div class="row">
         <div class="col-12">
-          <table class="table">
+          <table id="table" class="table">
             <thead>
               <tr>
                 <th scope="col">Name</th>
@@ -51,9 +51,14 @@
                 <td class="subTotal">$</td>           
                 <td><button class="btn btn-danger btn-sm remove">remove</button></td>
               </tr>
-              <tr class="bg-light text-dark">
-                <td class="name"><input id="name" placeholder="apple" type="text"></td>
-                <td><input id="cost" placeholder="25" type="number"></td>
+              
+              <tr class="bg-light text-dark add-item">
+                <td class="name">
+                  <input id="name" placeholder="apple" type="text" value="test"/>
+                </td>
+                <td>
+                  <input id="cost" placeholder="25" type="number" value="5"/>
+                </td>
                 <td><button type="button" class="btn btn-success add">add</button></td>
                 <td></td>
                 <td></td>
