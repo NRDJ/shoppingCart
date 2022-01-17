@@ -45,6 +45,10 @@ $(document).ready(function () {
     var name = $('.add-item').find('#name').val();
     var cost = $('.add-item').find('#cost').val();
 
+    if ( (!(name)) || (!(cost)) ){
+      return;
+    }
+
     var table = document.getElementById('table');
     var tableRowLength = $('tbody tr').length;
     var newRow = table.insertRow(tableRowLength);
