@@ -9,14 +9,12 @@ var updateSubTotal = function(ele) {
     return subTotal;
 }
 
-
 var updateTotalPrice = function() {
   var total = 0;
 
   $('tbody .shopping-row').each(function (i, ele) {
       var subTotal = updateSubTotal(ele);
       total += subTotal;
-      // total += parseFloat($(ele).find('.total').text().substring(1));
   });
 
   $('#total').html('Total Price: $'+total);
@@ -26,20 +24,21 @@ var updateTotalPrice = function() {
 $(document).ready(function () {
   updateTotalPrice();
 
-  $('.btn.remove').on('click', function (event) {
+  $(document).on('click','.btn.remove', function (event) {
     $(this).closest('tr').remove();
     updateTotalPrice();
-  })
+  });
 
   var timeout;
 
-  $('tr input').on('input', function () {
+  $(document).on('input','tr input', function (event) {
     clearTimeout(timeout);
 
     timeout = setTimeout(function () {
       updateTotalPrice();
     }, 500);
   });
+
 
   $('.btn.add').on('click', function (event) {
     
@@ -49,7 +48,7 @@ $(document).ready(function () {
     var table = document.getElementById('table');
     var tableRowLength = $('tbody tr').length;
     var newRow = table.insertRow(tableRowLength);
-    
+
     newRow.innerHTML = '<tr class="shopping-row">' +
 
     '<td class="name">' + name + '</td>' +
